@@ -1,5 +1,5 @@
 import { User } from "@/models/user";
-import { connectDB } from "@/utils";
+import { connectDB } from "@/mongodb";
 
 export const POST = async (req) => {
   const { fullName, phoneNumber, classAndSection, team, gender } =

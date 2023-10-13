@@ -5,7 +5,7 @@ import Image from "next/image";
 import Confetti from "react-confetti";
 import { Input, Listbox, Checkbox, Button } from "@/components";
 import { gradeData, sectionData, teamData } from "@/constants";
-import { validationHandler } from "@/utils/handler";
+import { validationHandler } from "@/utils";
 
 const Register = () => {
   const [userData, setUserData] = useState({
@@ -65,7 +65,7 @@ const Register = () => {
     setConfetti(true);
     setTimeout(() => {
       setConfetti(false);
-    }, 6000);
+    }, 13000);
     toast.success("You have successfully registered");
   };
 
@@ -103,6 +103,16 @@ const Register = () => {
       }
       if (res.status === 409) {
         toast.error("You have already registered");
+        setUserData({
+          firstName: "",
+          lastName: "",
+          phoneNumber: "",
+          grade: gradeData[0],
+          section: sectionData[0],
+          team: teamData[0],
+          male: false,
+          female: false,
+        });
       }
     } catch (error) {
       console.log(error);
@@ -221,7 +231,7 @@ const Register = () => {
         <Button
           type="submit"
           text={"Submit"}
-          styles="w-[150px] sm:w-[200px] focus:ring-2"
+          styles="w-[150px] sm:w-[200px] "
           err={isMessage}
         />
       </form>
