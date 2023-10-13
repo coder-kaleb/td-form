@@ -4,14 +4,14 @@ import { Navbar } from "@/components";
 
 export const metadata = {
   title: "Student Form",
-  themeColor: "bg-primaryBlack",
+  themeColor: "#2A2A2A",
 };
 
 const RootLayout = ({ children }) => {
   return (
     <html lang="en">
       <body className=" bg-white">
-        <main className="px-5 lg:px-32 ">
+        <main className="min-h-screen px-5 lg:px-32">
           <Navbar />
           {children}
         </main>
