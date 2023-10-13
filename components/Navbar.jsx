@@ -6,21 +6,21 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from ".";
 import { navigation } from "@/constants";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 
 const Navbar = () => {
+  // const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
-  const router = useRouter();
-  const handleRoute = () => {
-    router.push("/register");
-    setIsOpen(false);
-  };
+  // const handleRoute = () => {
+  //   router.push("/register");
+  //   setIsOpen(false);
+  // };
   return (
     <header
-      className="shadow-to mt-4 w-full rounded-xl bg-white px-4 py-2 sm:mt-8 sm:py-6"
+      className="mt-4 w-full rounded-xl bg-white px-4 py-2 shadow-to sm:mt-8 sm:py-6"
       id="header font-inter"
     >
-      <nav className="">
+      <nav>
         {/* Desktop navigation */}
         <div className="hidden items-center justify-between sm:flex">
           <Link href="/" className="select-none">
@@ -44,7 +44,12 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
-          <Button handleRoute={handleRoute} />
+          <Link
+            className=" rounded-lg bg-primaryBlack px-4 py-3 text-xl tracking-wide text-white"
+            href="/register"
+          >
+            Register
+          </Link>
         </div>
 
         {/* Mobile navigation */}
@@ -57,7 +62,7 @@ const Navbar = () => {
             onClick={() => setIsOpen((pre) => !pre)}
           />
           {isOpen && (
-            <div className="absolute right-3 top-6 z-10 flex flex-col gap-4 divide-y rounded-2xl bg-white px-4 pt-3 text-center shadow-md">
+            <div className="absolute right-3 top-6 z-10 flex flex-col gap-2 divide-y rounded-2xl bg-white px-4 pt-3 text-center shadow-md">
               <ul className="flex flex-col gap-y-1">
                 {navigation.map((item) => (
                   <li key={item.name}>
@@ -71,10 +76,12 @@ const Navbar = () => {
                   </li>
                 ))}
               </ul>
-              <Button
-                onMobiel=" mb-3 text-base px-4 py-2"
-                handleRoute={handleRoute}
-              />
+              <Link
+                className=" mb-3 rounded-md bg-primaryBlack px-2 py-1 text-xl tracking-wide text-white"
+                href="/register"
+              >
+                Register
+              </Link>
             </div>
           )}
         </div>

@@ -1,20 +1,24 @@
 "use client";
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 import { Transition, Listbox } from "@headlessui/react";
 import { FiCheck } from "react-icons/fi";
 import { LuChevronsUpDown } from "react-icons/lu";
 
-const ListboxComponent = ({ options }) => {
-  const [selected, setSelected] = useState(options[0]);
+const ListboxComponent = ({ options, data, setData, error }) => {
   return (
     <div className="w-44 sm:w-64">
-      <Listbox value={selected} onChange={setSelected}>
+      <Listbox
+        value={data}
+        onChange={(e) => {
+          setData((pre) => ({ ...pre, [e.fName]: e }));
+        }}
+      >
         <div className="relative mt-1">
           <Listbox.Button className="relative w-full cursor-default rounded-lg border-2 border-zinc-800 bg-white py-3 pl-3 pr-10 text-left sm:py-4  sm:text-sm ">
             <span className="block truncate pl-2 font-roboto text-xl sm:text-2xl">
-              {selected.name}
+              {data.name}
             </span>
-            <span className="pointer-events-none absolute inset-y-0 right-2 flex items-center pr-2">
+            <span className="pointer-events-none absolute inset-y-0 right-1 flex items-center pr-2">
               <LuChevronsUpDown
                 className="pointer-events-none h-7 w-7"
                 aria-hidden="true"
@@ -33,7 +37,7 @@ const ListboxComponent = ({ options }) => {
                   disabled={option.unavailable}
                   key={index}
                   className={({ active }) =>
-                    `relative cursor-default select-none py-2 pl-4 pr-4 ${
+                    `relative cursor-default select-none py-2 pl-3 pr-4 ${
                       active
                         ? " bg-[#E8E9EA] text-primaryBlack"
                         : "text-primaryBlack"
@@ -51,7 +55,7 @@ const ListboxComponent = ({ options }) => {
                         {option.name}
                       </span>
                       {selected ? (
-                        <span className="absolute inset-y-0 right-0 flex items-center pr-3 text-zinc-900">
+                        <span className="absolute inset-y-0 right-0 flex items-center pr-1 text-zinc-900">
                           <FiCheck className="h-6 w-6" aria-hidden="true" />
                         </span>
                       ) : null}

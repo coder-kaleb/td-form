@@ -138,4 +138,16 @@ export const teamData = [
     unavailable: false,
     fName: "team",
   },
+  {
+    id: 4,
+    name: "Charity",
+    unavailable: false,
+    fName: "team",
+  },
+  {
+    id: 5,
+    name: "Not Joined Yet",
+    unavailable: false,
+    fName: "team",
+  },
 ];

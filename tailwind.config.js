@@ -13,6 +13,10 @@ module.exports = {
       },
       colors: {
         primaryBlack: "#2A2A2A",
+        "light-white": {
+          DEFAULT: "rgba(59,60,152,0.03)",
+          100: "rgba(59,60,152,0.02)",
+        },
       },
       boxShadow: {
         to: "0px 2px 4px rgba(0, 0, 0, 0.25)",

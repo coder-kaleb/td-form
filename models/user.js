@@ -1,4 +1,4 @@
-import { Schema, model } from "mongoose";
+import { Schema, model, models } from "mongoose";
 
 const userSchema = new Schema(
   {
@@ -8,6 +8,10 @@ const userSchema = new Schema(
     },
     phoneNumber: {
       type: Number,
+      match: [
+        /^09\d{8}$/,
+        "Please enter a valid phone number. (ex: 0912345678)",
+      ],
       required: true,
     },
     classAndSection: {
@@ -26,4 +30,4 @@ const userSchema = new Schema(
   { timestamps: true },
 );
 
-export const User = model("User", userSchema);
+export const User = models.User || model("User", userSchema);
