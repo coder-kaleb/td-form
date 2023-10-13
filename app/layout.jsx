@@ -11,7 +11,7 @@ const RootLayout = ({ children }) => {
   return (
     <html lang="en">
       <body className=" bg-white">
-        <main className="min-h-screen px-5 lg:px-32">
+        <main className="min-h-screen bg-white px-5 lg:px-32">
           <Navbar />
           {children}
         </main>
