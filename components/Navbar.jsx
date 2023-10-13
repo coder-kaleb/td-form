@@ -79,6 +79,7 @@ const Navbar = () => {
               <Link
                 className=" mb-3 rounded-md bg-primaryBlack px-2 py-1 text-xl tracking-wide text-white"
                 href="/register"
+                onClick={() => setIsOpen(false)}
               >
                 Register
               </Link>
