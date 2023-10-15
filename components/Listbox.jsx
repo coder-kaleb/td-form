@@ -4,7 +4,7 @@ import { Transition, Listbox } from "@headlessui/react";
 import { FiCheck } from "react-icons/fi";
 import { LuChevronsUpDown } from "react-icons/lu";
 
-const ListboxComponent = ({ options, data, setData, error }) => {
+const ListboxComponent = ({ options, data, setData }) => {
   return (
     <div className="w-44 sm:w-64">
       <Listbox
@@ -13,14 +13,14 @@ const ListboxComponent = ({ options, data, setData, error }) => {
           setData((pre) => ({ ...pre, [e.fName]: e }));
         }}
       >
-        <div className="relative mt-1">
-          <Listbox.Button className="relative w-full cursor-default rounded-lg border-2 border-zinc-800 bg-white py-3 pl-3 pr-10 text-left sm:py-4  sm:text-sm ">
-            <span className="block truncate pl-2 font-roboto text-xl sm:text-2xl">
+        <div className="relative mt-1 bg-white">
+          <Listbox.Button className="relative w-full cursor-default rounded-lg border-2 border-zinc-800 bg-white py-3 pl-3 pr-10 text-left sm:py-4 sm:text-sm ">
+            <span className="block truncate pl-2 font-roboto text-xl text-primaryBlack sm:text-2xl">
               {data.name}
             </span>
             <span className="pointer-events-none absolute inset-y-0 right-1 flex items-center pr-2">
               <LuChevronsUpDown
-                className="pointer-events-none h-7 w-7"
+                className="pointer-events-none h-7 w-7 text-primaryBlack"
                 aria-hidden="true"
               />
             </span>

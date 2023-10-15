@@ -26,7 +26,7 @@ const Input = ({
         name={name}
         onChange={handleChange}
         className={twMerge(
-          "text-md w-full rounded-xl border-2 border-zinc-500 px-6 py-4 font-roboto text-xl tracking-wide text-primaryBlack  outline-slate-700 placeholder:text-gray-400",
+          "text-md w-full rounded-xl border-2 border-zinc-500 px-6 py-4 font-roboto text-xl tracking-wide text-primaryBlack bg-white outline-slate-700 placeholder:text-gray-400",
           error && "border-red-500 focus:outline-none",
         )}
       />

@@ -2,7 +2,9 @@ const Checkbox = ({ gender, name, handleChange, checkbox }) => {
   return (
     <div
       className={`flex items-center gap-2 rounded-lg border border-gray-500 px-4 py-2 ${
-        checkbox ? " outline outline-2 outline-offset-4" : ""
+        checkbox
+          ? " outline outline-2 outline-offset-4 outline-primaryBlack"
+          : ""
       }`}
     >
       <input
